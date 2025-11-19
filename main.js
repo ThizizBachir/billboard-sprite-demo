@@ -124,7 +124,7 @@ class application{
 
         // ANSWER TO QUESTION 1: Billboard effect (always face camera)
         // This makes the square rotate to face Camera1 at all times
-        this.square.lookAt(this.Camera1.position);
+        this.square.quaternion.copy(this.Camera1.quaternion);
 
         // Optional (for illustration) camera animation - rocking motion
         if (this._rockingOrbit) {
@@ -193,5 +193,6 @@ function render(time) {
     app.update(delta);
     requestAnimationFrame(render);
 }
+
 
 requestAnimationFrame(render);
